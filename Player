@@ -1,4 +1,65 @@
-Public class Player {
 
-public Player()
+
+public class Player extends Character
+{
+    private int gold, attackDmg, exp, strength, vitality, luck, speech, finesse, agility;
+    private int attributeCount;
+    
+    public Player(){
+        
+    }
+    
+    public void setAttackDmg(int a){
+        attackDmg = a;
+    }
+    public int getAttackDmg(){
+        return attackDmg;
+    }
+    
+    public void attack(Enemy y){
+        this.setHealth(this.getHealth() - y.getAttackDmg());
+        y.setHealth(y.getHealth() - this.getAttackDmg());
+    }
+    
+    public void setExp(int e){
+        exp = e;
+    }
+    public int getExp(){
+        return exp;
+    }
+    
+    public void setGold(int g){
+        gold = g;
+    }
+    public int getGold(){
+        return gold;
+    }
+    
+    public void getAttributes(){
+        System.out.println("Strength: " + strength);
+        System.out.println("Vitality: " + vitality);
+        System.out.println("Luck:     " + luck);
+        System.out.println("Speech:   " + speech);
+        System.out.println("Finesse:  " + finesse);
+        System.out.println("Agility:  " + agility);
+    }
+    
+    public void increaseStrength(){
+        strength++;
+    }
+    public void increaseVitality(){
+        vitality++;
+    }
+    public void increaseLuck(){
+        luck++;
+    }
+    public void increaseSpeech(){
+        speech++;
+    }
+    public void increaseFinesse(){
+        finesse++;
+    }
+    public void increaseAgility(){
+        agility++;
+    }
 }
