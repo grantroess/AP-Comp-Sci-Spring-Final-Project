@@ -1,0 +1,26 @@
+import java.util.*;
+public class Store {
+    ArrayList<Item> inventory = new ArrayList<Item>();
+    public Store() {
+        Item rustySword = new Item("Rusty Sword", 25, 10);
+        inventory.add(rustySword);
+        Item longSword = new Item("Long Sword", 50, 20);
+        inventory.add(longSword);
+    }
+
+    public void displayInventory() {
+        for(Item i:inventory) {
+            System.out.println("Name: " + i.getName() + " Price: " + i.getPrice() + " Damage: " + i.getDmg());
+        }
+    }
+
+    public void buy(Item i, Player p) {
+        p.setGold(p.getGold() - i.getPrice());
+        inventory.remove(i);
+        p.setAttackDmg(p.getAttackDmg() + i.getDmg());
+    }
+
+    public void heal(Player p) {
+
+    }
+}
