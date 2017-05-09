@@ -1,0 +1,13 @@
+
+
+public abstract class Enemy extends Character
+{
+    private int dropChance;
+    
+    public void setDropChance(int c){
+        dropChance = c;
+    }
+    public int getDropChance(){
+        return dropChance;
+    }
+}
