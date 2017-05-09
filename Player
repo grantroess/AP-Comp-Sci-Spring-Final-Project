@@ -10,6 +10,7 @@ public class Player extends Character
         this.setHealth(100);
         gold = 0;
         exp = 0;
+        attributeCount = 10;
     }
     
     public void setAttackDmg(int a){
@@ -59,23 +60,29 @@ public class Player extends Character
     }
     
     public void increaseStrength(){
+        attributeCount--;
         strength++;
         attackDmg += 5;
     }
     public void increaseVitality(){
+        attributeCount--;
         vitality++;
         this.setHealth(this.getHealth() + 10);
     }
     public void increaseLuck(){
+        attributeCount--;
         luck++;
     }
     public void increaseSpeech(){
+        attributeCount--;
         speech++;
     }
     public void increaseFinesse(){
+        attributeCount--;
         finesse++;
     }
     public void increaseAgility(){
+        attributeCount--;
         agility++;
     }
 }
