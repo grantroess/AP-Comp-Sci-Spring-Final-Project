@@ -1,0 +1,10 @@
+public class Dungeon {
+    private int killCount;
+    public void setKillCount(int k) {
+        killCount = k;
+    }
+
+    public int getKillCount() {
+        return killCount;
+    }
+}
