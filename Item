@@ -1,0 +1,29 @@
+public class Item {
+    private String name;
+    private int price;
+    private int dmg;
+
+    public void setName(String s) {
+        name = s;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setPrice(int p) {
+        price = p;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setDmg(int d) {
+        dmg = d;
+    }
+
+    public int getDmg() {
+        return dmg;
+    }
+}
