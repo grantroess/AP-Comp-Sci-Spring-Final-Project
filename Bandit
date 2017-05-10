@@ -1,0 +1,25 @@
+
+import java.util.*;
+public class Bandit extends Enemy
+{    
+    ArrayList<String> list = new ArrayList<String>();
+    String z = "You have a weak jawline!";
+    String x = "Your mother's weight is above average!";
+    String c = "Show me your moves!";
+    String v = "Meme4";
+    String b = "Meme5";
+    String n = "Meme6";
+    public Bandit(){        
+        list.add(z);
+        list.add(x);
+        list.add(c);
+        list.add(v);
+        list.add(b);
+        list.add(n);
+    }
+
+    public String taunt(){
+        double i = Math.random() * list.size() -1;
+        return list.get((int)i);     
+    }
+}
