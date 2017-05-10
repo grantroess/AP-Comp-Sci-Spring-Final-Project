@@ -1,0 +1,13 @@
+
+
+public class Elf extends Enemy
+{
+    int tempHealth;
+    public void invulnerable(){
+        tempHealth = this.getHealth();
+        this.setHealth(10000);
+    }
+    public void vulnerable(){
+        this.setHealth(tempHealth);
+    }
+}
