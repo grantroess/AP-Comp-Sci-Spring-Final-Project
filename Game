@@ -35,5 +35,8 @@ public class Game {
             player.getAttributes();
             System.out.println("You have " + player.getAttributeCount() + " attribute points left to distribute.");
         }
+        System.out.println("Feeling fresh and ready for a new day you carefully make your way out of the cave.");
+        System.out.println("After leaving the cave you find yourself in a mysterious forest, you follow a dirt path until you see in the distance a proper gravel road.");
+        System.out.println("You follow the path until you see ahead of you a small village with a few houses, general store and most importantly, a pub.");
     }
 }
