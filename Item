@@ -3,6 +3,12 @@ public class Item {
     private int price;
     private int dmg;
 
+    public Item(String n, int p, int d) {
+        name = n;
+        price = p;
+        dmg = d;
+    }
+
     public void setName(String s) {
         name = s;
     }
