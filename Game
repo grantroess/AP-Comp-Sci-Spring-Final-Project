@@ -1,1 +1,39 @@
+import java.util.*;
 
+public class Game {
+    Scanner reader = new Scanner(System.in);
+
+    Player player = new Player();
+    Store store = new Store();
+    Dungeon dungeon = new Dungeon();
+
+    public void intro() {    
+        System.out.println("You wake up dazed and confused inside of a dark and musty cave");
+        System.out.print("what is your name?   ");
+        player.setName(reader.next());
+        System.out.println(player.getName() + "? That's a nice name.");
+        System.out.println("You will now choose your attributes, you have 10 skill points available.");
+        System.out.println("Press the corresponding numerical value for the attribute that you would like to apply a skill point to.");
+        System.out.println("(1) - Strength \n(2) - Vitality \n(3) - Luck \n(4) - Speech \n(5) - Finesse \n(6) - Agility ");
+        while(player.getAttributeCount() > 0) {
+            int pick = reader.nextInt();
+            if(pick == 1) {
+                player.increaseStrength();
+            } else if(pick == 2) {
+                player.increaseVitality();
+            } else if(pick == 3) {
+                player.increaseLuck();
+            } else if(pick == 4) {
+                player.increaseSpeech();
+            } else if(pick == 5) {
+                player.increaseFinesse();
+            } else if(pick == 6) {
+                player.increaseAgility();
+            } else {
+                System.out.println("Error: Please choose again");
+            }
+            player.getAttributes();
+            System.out.println("You have " + player.getAttributeCount() + " attribute points left to distribute.");
+        }
+    }
+}
