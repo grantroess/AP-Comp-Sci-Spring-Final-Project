@@ -1,10 +1,19 @@
+
+
 public class Dungeon {
     private int killCount;
+    private int killGoal;
     public void setKillCount(int k) {
         killCount = k;
     }
-
     public int getKillCount() {
         return killCount;
+    }
+    
+    public void setkillGoal(int m){
+        killGoal = m;
+    }
+    public int getKillGoal(){
+        return killGoal;
     }
 }
