@@ -2,12 +2,13 @@
 
 public class Player extends Character
 {
-    private int gold, attackDmg, exp, strength, vitality, luck, speech, finesse, agility;
+    private int gold, attackDmg, exp, strength, vitality, luck, speech, finesse, agility, currentHealth, maxHealth;
     private int attributeCount;
     
     public Player(){
         attackDmg = 10;
-        this.setHealth(100);
+        maxHealth = 100;
+        currentHealth = 100;
         gold = 0;
         exp = 0;
         attributeCount = 10;
@@ -20,8 +21,22 @@ public class Player extends Character
         return attackDmg;
     }
     
+    public void setMaxHealth(int f){
+        maxHealth = f;
+    }
+    public int getMaxHealth(){
+        return maxHealth;
+    }
+    
+    public void setCurrentHealth(int h){
+        currentHealth = h;
+    }
+    public int getCurrentHealth(){
+        return currentHealth;
+    }
+    
     public void attack(Enemy y){
-        this.setHealth(this.getHealth() - y.getAttackDmg());
+        this.setCurrentHealth(this.getCurrentHealth() - y.getAttackDmg());
         y.setHealth(y.getHealth() - this.getAttackDmg());
     }
     
@@ -63,26 +78,33 @@ public class Player extends Character
         attributeCount--;
         strength++;
         attackDmg += 5;
+        setCurrentHealth(getMaxHealth());
     }
     public void increaseVitality(){
         attributeCount--;
         vitality++;
-        this.setHealth(this.getHealth() + 10);
+        setMaxHealth(getMaxHealth() + 10);
+        setCurrentHealth(getMaxHealth());
     }
     public void increaseLuck(){
         attributeCount--;
         luck++;
+        setCurrentHealth(getMaxHealth());
     }
     public void increaseSpeech(){
         attributeCount--;
         speech++;
+        setCurrentHealth(getMaxHealth());
     }
     public void increaseFinesse(){
         attributeCount--;
         finesse++;
+        setCurrentHealth(getMaxHealth());
     }
     public void increaseAgility(){
         attributeCount--;
         agility++;
+        setCurrentHealth(getMaxHealth());
     }
 }
+
