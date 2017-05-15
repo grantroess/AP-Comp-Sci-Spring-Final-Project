@@ -38,5 +38,12 @@ public class Game {
         System.out.println("Feeling fresh and ready for a new day you carefully make your way out of the cave.");
         System.out.println("After leaving the cave you find yourself in a mysterious forest, you follow a dirt path until you see in the distance a proper gravel road.");
         System.out.println("You follow the path until you see ahead of you a small village with a few houses, general store and most importantly, a pub.");
+        
+    }
+    public void endGame() {
+       System.out.println("You have completed your quest!");
+       System.out.println("Name: " + player.getName());
+       System.out.println("Stats: ");
+       player.getAttributes();
     }
 }
