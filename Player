@@ -22,10 +22,13 @@ public class Player extends Character
     public void attack(Enemy y){
         this.setHealth(this.getHealth() - y.getAttackDmg());
         y.setHealth(y.getHealth() - this.getAttackDmg());
+        System.out.println("The player attacks the enemy for " + this.getAttackDmg() + " while taking " + y.getAttackDmg() + " in return");
+        System.out.println("Player Health: " + this.getHealth());
+        System.out.println("Enemy Health: " + y.getHealth());
     }
 
     public void attackSequence(Enemy y) {
-        while(this.getHealth() > 0 || y.getHealth() > 0) {
+        while(this.getHealth() > 0 && y.getHealth() > 0) {
             this.attack(y);
         }
     }
