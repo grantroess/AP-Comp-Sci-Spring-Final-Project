@@ -1,45 +1,35 @@
-
-
 public class Player extends Character
 {
-    private int gold, attackDmg, exp, strength, vitality, luck, speech, finesse, agility, currentHealth, maxHealth;
+    private int gold, attackDmg, exp, strength, vitality, luck, speech, finesse, agility;
     private int attributeCount;
-    
+
     public Player(){
         attackDmg = 10;
-        maxHealth = 100;
-        currentHealth = 100;
+        this.setHealth(100);
         gold = 0;
         exp = 0;
         attributeCount = 10;
     }
-    
+
     public void setAttackDmg(int a){
         attackDmg = a;
     }
+
     public int getAttackDmg(){
         return attackDmg;
     }
-    
-    public void setMaxHealth(int f){
-        maxHealth = f;
-    }
-    public int getMaxHealth(){
-        return maxHealth;
-    }
-    
-    public void setCurrentHealth(int h){
-        currentHealth = h;
-    }
-    public int getCurrentHealth(){
-        return currentHealth;
-    }
-    
+
     public void attack(Enemy y){
-        this.setCurrentHealth(this.getCurrentHealth() - y.getAttackDmg());
+        this.setHealth(this.getHealth() - y.getAttackDmg());
         y.setHealth(y.getHealth() - this.getAttackDmg());
     }
-    
+
+    public void attackSequence(Enemy y) {
+        while(this.getHealth() > 0 || y.getHealth() > 0) {
+            this.attack(y);
+        }
+    }
+
     public void setExp(int e){
         exp = e;
         if (exp <= 100) {
@@ -47,24 +37,27 @@ public class Player extends Character
             attributeCount++;
         }
     }
+
     public int getExp(){
         return exp;
     }
-    
+
     public void setAttributeCount(int f) {
         attributeCount = f;
     }
+
     public int getAttributeCount(){
         return attributeCount;
     }
-    
+
     public void setGold(int g){
         gold = g;
     }
+
     public int getGold(){
         return gold;
     }
-    
+
     public void getAttributes(){
         System.out.println("Strength: " + strength);
         System.out.println("Vitality: " + vitality);
@@ -73,38 +66,36 @@ public class Player extends Character
         System.out.println("Finesse:  " + finesse);
         System.out.println("Agility:  " + agility);
     }
-    
+
     public void increaseStrength(){
         attributeCount--;
         strength++;
         attackDmg += 5;
-        setCurrentHealth(getMaxHealth());
     }
+
     public void increaseVitality(){
         attributeCount--;
         vitality++;
-        setMaxHealth(getMaxHealth() + 10);
-        setCurrentHealth(getMaxHealth());
+        this.setHealth(this.getHealth() + 10);
     }
+
     public void increaseLuck(){
         attributeCount--;
         luck++;
-        setCurrentHealth(getMaxHealth());
     }
+
     public void increaseSpeech(){
         attributeCount--;
         speech++;
-        setCurrentHealth(getMaxHealth());
     }
+
     public void increaseFinesse(){
         attributeCount--;
         finesse++;
-        setCurrentHealth(getMaxHealth());
     }
+
     public void increaseAgility(){
         attributeCount--;
         agility++;
-        setCurrentHealth(getMaxHealth());
     }
 }
-
