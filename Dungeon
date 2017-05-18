@@ -1,19 +1,29 @@
-
-
+import java.util.*;
 public class Dungeon {
     private int killCount;
-    private int killGoal;
+    ArrayList<Enemy> BadGuys = new ArrayList<Enemy>();
+    public Dungeon() {
+        Bandit a = new Bandit();
+        BadGuys.add(a);
+        Bandit b = new Bandit();
+        BadGuys.add(b);
+        Bandit c = new Bandit();
+        BadGuys.add(c);
+    }
+
+    public Enemy getEnemy() {
+        return BadGuys.get(0);
+    }
+
+    public void killCurrentEnemy() {
+        BadGuys.remove(0);
+    }
+
     public void setKillCount(int k) {
         killCount = k;
     }
+
     public int getKillCount() {
         return killCount;
-    }
-    
-    public void setkillGoal(int m){
-        killGoal = m;
-    }
-    public int getKillGoal(){
-        return killGoal;
     }
 }
