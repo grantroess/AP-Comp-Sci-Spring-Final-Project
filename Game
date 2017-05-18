@@ -57,5 +57,11 @@ public class Game {
             }
         }
     }
+    public void endGame() {
+       System.out.println("You have completed your quest!");
+       System.out.println("Name: " + player.getName());
+       System.out.println("Stats: ");
+       player.getAttributes();
+    }
 }
 
