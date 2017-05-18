@@ -4,8 +4,12 @@ public class Dungeon {
     ArrayList<Enemy> BadGuys = new ArrayList<Enemy>();
     public Dungeon() {
         Bandit a = new Bandit();
+        a.setHealth(50);
+        a.setAttackDmg(8);
         BadGuys.add(a);
         Bandit b = new Bandit();
+        b.setHealth(75);
+        b.setAttackDmg(10);
         BadGuys.add(b);
         Bandit c = new Bandit();
         BadGuys.add(c);
