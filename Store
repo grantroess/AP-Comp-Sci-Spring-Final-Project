@@ -9,8 +9,10 @@ public class Store {
     }
 
     public void displayInventory() {
+        int x = 1;
         for(Item i:inventory) {
-            System.out.println("Name: " + i.getName() + " Price: " + i.getPrice() + " Damage: " + i.getDmg());
+            System.out.println("(" + x + ") " + i.getName() + " (" + i.getPrice() + " Gold, " + i.getDmg() + " Dmg)");
+            x++;
         }
     }
 
@@ -23,4 +25,4 @@ public class Store {
     public void heal(Player p) {
 
     }
-}
+}   
