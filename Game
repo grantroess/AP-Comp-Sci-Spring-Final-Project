@@ -17,17 +17,17 @@ public class Game {
         System.out.println("(1) - Strength \n(2) - Vitality \n(3) - Luck \n(4) - Speech \n(5) - Finesse \n(6) - Agility ");
         while(player.getAttributeCount() > 0) {
             String pick = reader.next();
-            if(pick == "1") {
+            if(pick.equals("1")) {
                 player.increaseStrength();
-            } else if(pick == "2") {
+            } else if(pick.equals("2")) {
                 player.increaseVitality();
-            } else if(pick == "3") {
+            } else if(pick.equals("3")) {
                 player.increaseLuck();
-            } else if(pick == "4") {
+            } else if(pick.equals("4")) {
                 player.increaseSpeech();
-            } else if(pick == "5") {
+            } else if(pick.equals("5")) {
                 player.increaseFinesse();
-            } else if(pick == "6") {
+            } else if(pick.equals("6")) {
                 player.increaseAgility();
             } else {
                 tony();
@@ -43,9 +43,9 @@ public class Game {
 
     public void choices() {
         System.out.println("You are in the courtyard, where would you like to go? \n(1) - Dungeon \n(2) - Store");
-        if(reader.next() == "1") {
+        if(reader.next().equals("1")) {
             System.out.println("You are in the dungeon, would you like to fight or leave? \n(1) - Fight \n(2) - Leave");
-            if(reader.next() == "1") {
+            if(reader.next().equals("1")) {
                 player.attackSequence(dungeon.getEnemy());
                 if(dungeon.getEnemy().getHealth() <= 0) {
                     dungeon.killCurrentEnemy();
@@ -53,17 +53,17 @@ public class Game {
                     this.choices();
                 }
             }
-            else if (reader.next() == "2") {
+            else if (reader.next().equals("2")) {
                 this.choices();
             }
             else {
                 tony();
             }
         }
-        else if (reader.next() == "2") {
+        else if (reader.next().equals("2")) {
             System.out.println("Welcome to the general store! What can I get for you today?");
             System.out.println("(1) - Buy \n (2) - Leave");
-            if (reader.next() == "1") {
+            if (reader.next().equals("1")) {
                 System.out.println("What catches your eye?");
                 store.displayInventory();
             }
