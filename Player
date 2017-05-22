@@ -1,8 +1,8 @@
 public class Player extends Character
 {
-    private int gold, attackDmg, exp, strength, vitality, luck, speech, finesse, agility;
+    private int gold, exp, strength, vitality, luck, speech, finesse, agility;
     private int attributeCount;
-
+    private double attackDmg;
     public Player(){
         attackDmg = 10;
         this.setHealth(100);
@@ -11,24 +11,21 @@ public class Player extends Character
         attributeCount = 10;
     }
 
-    public void setAttackDmg(int a){
+    public void setAttackDmg(double a){
         attackDmg = a;
     }
 
-    public int getAttackDmg(){
+    public double getAttackDmg(){
         return attackDmg;
     }
 
     public void attack(Enemy y){
         this.setHealth(this.getHealth() - y.getAttackDmg());
         y.setHealth(y.getHealth() - this.getAttackDmg());
-        System.out.println("The player attacks the enemy for " + this.getAttackDmg() + " while taking " + y.getAttackDmg() + " in return");
-        System.out.println("Player Health: " + this.getHealth());
-        System.out.println("Enemy Health: " + y.getHealth());
     }
 
     public void attackSequence(Enemy y) {
-        while(this.getHealth() > 0 && y.getHealth() > 0) {
+        while(this.getHealth() > 0 || y.getHealth() > 0) {
             this.attack(y);
         }
     }
