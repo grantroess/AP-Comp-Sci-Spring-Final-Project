@@ -42,8 +42,8 @@ public class Game {
     }
 
     public void mainChoices() {
-        String tempM = reader.next();
         System.out.println("You are in the courtyard, where would you like to go? \n(1) - Dungeon \n(2) - Store");
+        String tempM = reader.next();
         if (tempM.equals("1")) {
             System.out.println("You are in the dungeon, would you like to fight or leave? \n(1) - Fight \n(2) - Leave");
             this.dungeonChoices();
@@ -66,6 +66,7 @@ public class Game {
             if(dungeon.getEnemy().getHealth() <= 0) {
                 dungeon.killCurrentEnemy();
                 System.out.println("You won! Having defeated your opponent you leave the dungeon in order to regain your senses.");
+                dungeon.setKillCount(dungeon.getKillCount() + 1);
                 if (dungeon.getKillCount() >= 20) {
                     this.endGame();
                 }
