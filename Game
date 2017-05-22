@@ -64,7 +64,8 @@ public class Game {
             System.out.println("Welcome to the general store! What can I get for you today?");
             System.out.println("(1) - Buy \n (2) - Leave");
             if (reader.next() == "1") {
-                
+                System.out.println("What catches your eye?");
+                store.displayInventory();
             }
         }
         else {
