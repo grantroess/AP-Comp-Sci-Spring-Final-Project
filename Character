@@ -1,10 +1,12 @@
 
 
+
+
 public abstract class Character
 {
     private String name;
-    private int health, attackDmg;
-    
+    private double health;
+    private double attackDmg;
     public void setName(String n){
         name = n;
     }
@@ -12,18 +14,19 @@ public abstract class Character
         return name;
     }
     
-    public void setHealth(int h){
+    public void setHealth(double h){
         health = h;
     }
-    public int getHealth(){
+    public double getHealth(){
         return health;
     }
     
-    public void setAttackDmg(int a){
+    public void setAttackDmg(double a){
         attackDmg = a;
     }
-    public int getAttackDmg(){
+    public double getAttackDmg(){
         return attackDmg;
     }
 }
+
 
