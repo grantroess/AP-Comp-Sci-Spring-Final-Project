@@ -2,7 +2,7 @@ public class Player extends Character
 {
     private int gold, exp, strength, vitality, luck, speech, finesse, agility;
     private int attributeCount;
-    private double attackDmg;
+    private double attackDmg, tempHealth, tempAttackDmg;
     public Player(){
         attackDmg = 10;
         this.setHealth(100);
@@ -19,6 +19,15 @@ public class Player extends Character
         return attackDmg;
     }
 
+    public void crit() {
+        tempAttackDmg = this.getAttackDmg();
+        this.setAttackDmg(this.getAttackDmg() *  1.25);
+    }
+
+    public void unCrit() {
+        this.setAttackDmg(tempAttackDmg);
+    }
+
     public void attack(Enemy y){
         this.setHealth(this.getHealth() - y.getAttackDmg());
         y.setHealth(y.getHealth() - this.getAttackDmg());
@@ -26,8 +35,26 @@ public class Player extends Character
 
     public void attackSequence(Enemy y) {
         while(this.getHealth() > 0 || y.getHealth() > 0) {
+            double temp = Math.random()*30;
+            if (temp <= agility) {
+                this.invulnerable();
+            }
+            if (temp <= finesse) {
+                crit();
+            }
             this.attack(y);
+            this.vulnerable();
+            this.unCrit();
         }
+    }
+
+    public void invulnerable(){
+        tempHealth = this.getHealth();
+        this.setHealth(10000);
+    }
+
+    public void vulnerable(){
+        this.setHealth(tempHealth);
     }
 
     public void setExp(int e){
@@ -70,7 +97,7 @@ public class Player extends Character
     public void increaseStrength(){
         attributeCount--;
         strength++;
-        attackDmg += 5;
+        attackDmg *= 1.2;
     }
 
     public void increaseVitality(){
