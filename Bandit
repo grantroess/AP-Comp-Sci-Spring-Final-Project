@@ -6,9 +6,9 @@ public class Bandit extends Enemy
     String z = "You have a weak jawline!";
     String x = "Your mother's weight is above average!";
     String c = "Show me your moves!";
-    String v = "Meme4";
-    String b = "Meme5";
-    String n = "Meme6";
+    String v = "My father was a test tube and my mother was a rubber band. You do the Math!!";
+    String b = "Your foot is dumb.";
+    String n = "Bold move for someone not riding a unicycle.";
     public Bandit(){        
         list.add(z);
         list.add(x);
@@ -35,4 +35,5 @@ public class Bandit extends Enemy
         return list.get((int)i);     
     }
 }
+
 
