@@ -39,6 +39,13 @@ public class Game {
         System.out.println("Feeling fresh and ready for a new day you carefully make your way out of the cave.");
         System.out.println("After leaving the cave you find yourself in a mysterious forest, you follow a dirt path until you see in the distance a proper gravel road.");
         System.out.println("You follow the path until you see ahead of you a small village with a few houses, general store and most importantly, a pub.");
+        System.out.println("You walk into the pub and order a drink.");
+        System.out.println("As you anjoy your drink, a large man enters the pub, wailing at the top of his lungs.");
+        System.out.println("He screams out, \"Somebody help! My son! My son has been taken by savages!\"");
+        System.out.println("You approach the man and ask, \"I am " + player.getName() + ". Where was your son taken?\"");
+        System.out.println("\"The old King's abandoned dungeon, just outside the village. Please help him!");
+        System.out.println("You pat the man's shoulder and say \"Worry not friend, I will return your son to you.\"");
+        System.out.println("Before the man can say anything, you gulp down the last of your drink and head outside, determined to rescue the poor child.");
     }
 
     public void mainChoices() {
@@ -50,7 +57,7 @@ public class Game {
         }
         else if (tempM.equals("2")) {
             System.out.println("Welcome to the general store! What can I get for you today?");
-            System.out.println("(1) - Buy \n (2) - Leave");
+            System.out.println("(1) - Buy \n(2) - Leave");
             this.storeChoices();
         }
         else {
@@ -68,7 +75,7 @@ public class Game {
                 System.out.println("You won! Having defeated your opponent you leave the dungeon in order to regain your senses.");
                 dungeon.setKillCount(dungeon.getKillCount() + 1);
                 if (dungeon.getKillCount() >= 20) {
-                    this.endGame();
+                    this.dead();
                 }
                 else {
                     this.mainChoices();
@@ -106,6 +113,10 @@ public class Game {
         System.out.println("Name: " + player.getName());
         System.out.println("Stats: ");
         player.getAttributes();
+    }
+    
+    public void dead() {
+        System.out.println("You died! Maybe next time you shouldn't do that...");
     }
 
     public void tony() {
