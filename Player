@@ -38,13 +38,18 @@ public class Player extends Character
             double temp = Math.random()*30;
             if (temp <= agility) {
                 this.invulnerable();
+                this.attack(y);
+                this.vulnerable();
             }
-            if (temp <= finesse) {
-                crit();
+            
+            else if (temp <= finesse) {
+                this.crit();
+                this.attack(y);
+                this.unCrit();
             }
-            this.attack(y);
-            this.vulnerable();
-            this.unCrit();
+            else {
+                this.attack(y);
+            }
         }
     }
 
