@@ -16,6 +16,18 @@ public class Bandit extends Enemy
         list.add(v);
         list.add(b);
         list.add(n);
+        this.taunt();
+    }
+    public Bandit (double h, double d) {
+        list.add(z);
+        list.add(x);
+        list.add(c);
+        list.add(v);
+        list.add(b);
+        list.add(n);
+        this.setHealth(h);
+        this.setAttackDmg(d);
+        this.taunt();
     }
 
     public String taunt(){
@@ -23,3 +35,4 @@ public class Bandit extends Enemy
         return list.get((int)i);     
     }
 }
+
