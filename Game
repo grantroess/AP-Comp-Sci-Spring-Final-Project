@@ -75,7 +75,7 @@ public class Game {
                 System.out.println("You won! Having defeated your opponent you leave the dungeon in order to regain your senses.");
                 dungeon.setKillCount(dungeon.getKillCount() + 1);
                 if (dungeon.getKillCount() >= 20) {
-                    this.dead();
+                    this.endGame();
                 }
                 else {
                     this.mainChoices();
