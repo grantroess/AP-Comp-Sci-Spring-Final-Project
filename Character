@@ -1,7 +1,7 @@
 
-
-
-
+/**
+ * This class contains the basic methods of name, health, and attack damage for the player and enemy
+ */
 public abstract class Character
 {
     private String name;
@@ -28,5 +28,3 @@ public abstract class Character
         return attackDmg;
     }
 }
-
-
