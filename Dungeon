@@ -1,26 +1,24 @@
 import java.util.*;
 public class Dungeon {
     private int killCount;
-    ArrayList<Enemy> BadGuys = new ArrayList<Enemy>();
+    ArrayList<Enemy> badGuys = new ArrayList<Enemy>();
     public Dungeon() {
-        Bandit a = new Bandit();
-        a.setHealth(50);
-        a.setAttackDmg(8);
-        BadGuys.add(a);
-        Bandit b = new Bandit();
-        b.setHealth(75);
-        b.setAttackDmg(10);
-        BadGuys.add(b);
-        Bandit c = new Bandit();
-        BadGuys.add(c);
+        Bandit a = new Bandit(50, 8);
+        badGuys.add(a);
+        Bandit b = new Bandit(75, 10);
+        badGuys.add(b);
+        Bandit c = new Bandit(90, 14);
+        badGuys.add(c);
+        Bandit d = new Bandit(100, 17);
+        badGuys.add(d);
     }
 
     public Enemy getEnemy() {
-        return BadGuys.get(0);
+        return badGuys.get(0);
     }
 
     public void killCurrentEnemy() {
-        BadGuys.remove(0);
+        badGuys.remove(0);
     }
 
     public void setKillCount(int k) {
