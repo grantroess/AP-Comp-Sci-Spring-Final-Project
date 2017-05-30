@@ -5,6 +5,7 @@ public class Goblin extends Enemy
     public Goblin (double h, double d) {
         this.setHealth(h);
         this.setAttackDmg(d);
-        setDropChance(15);
+        setDropChanceGold(15);
+        setDropChanceExp(20);
     }
 }
