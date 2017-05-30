@@ -28,4 +28,8 @@ public class Dungeon {
     public int getKillCount() {
         return killCount;
     }
+    
+    public void drop() {
+        badGuys.get(0).dropGold();
+    }
 }
