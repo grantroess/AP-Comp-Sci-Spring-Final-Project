@@ -5,7 +5,8 @@ public class Store {
         Item blank = new Item("Buy Nothing",0,0);
         inventory.add(blank);
         Item sharpStick = new Item("Sharp Stick", 5 , 8);
-        Item rustySword = new Item("Rusty Sword", 25, 10);
+        inventory.add(sharpStick);
+        Item rustySword = new Item("Rusty Sword", 35, 10);
         inventory.add(rustySword);
         Item longSword = new Item("Long Sword", 50, 20);
         inventory.add(longSword);
