@@ -33,6 +33,8 @@ public class Store {
     }
 
     public void heal(Player p) {
-
+        System.out.println("You feel slight tingle as more life force is deposited into your body.");
+        p.setHealth(100 + (p.getVitality() * 10));
+        p.setGold(p.getGold() - 10);
     }
 }   
