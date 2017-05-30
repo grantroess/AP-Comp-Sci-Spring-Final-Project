@@ -18,6 +18,10 @@ public class Player extends Character
     public double getAttackDmg(){
         return attackDmg;
     }
+    
+    public int getVitality() {
+        return vitality;
+    }
 
     public void crit() {
         tempAttackDmg = this.getAttackDmg();
