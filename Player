@@ -81,6 +81,10 @@ public class Player extends Character
     public int getAttributeCount(){
         return attributeCount;
     }
+    
+    public int getLuck() {
+        return luck;
+    }
 
     public void setGold(int g){
         gold = g;
