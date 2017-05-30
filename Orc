@@ -2,7 +2,12 @@
 
 public class Orc extends Enemy
 {
+    public Orc (double h, double d) {
+        this.setHealth(h);
+        this.setAttackDmg(d);
+        setDropChance(26);
+    }
     public void berserk(){
-        this.setAttackDmg(this.getAttackDmg() * 2);
+        this.setAttackDmg(this.getAttackDmg() * 1.5);
     }
 }
