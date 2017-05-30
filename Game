@@ -75,17 +75,22 @@ public class Game {
         if(tempD.equals("1")) {
             player.attackSequence(dungeon.getEnemy());
             if(dungeon.getEnemy().getHealth() <= 0) {
-                player.setGold(player.getGold() + dungeon.drop() + player.getLuck());
-                dungeon.killCurrentEnemy();
-                System.out.println("You won! Having defeated your opponent you leave the dungeon in order to regain your senses.");
-                System.out.println("You now have " + player.getGold() + " gold.");
-                System.out.println("You now have " + player.getHealth() + " health points.");
-                dungeon.setKillCount(dungeon.getKillCount() + 1);
-                if (dungeon.getKillCount() >= 20) {
-                    this.endGame();
+                if (player.getHealth() <= 0) {
+                    dead();
                 }
                 else {
-                    this.mainChoices();
+                    player.setGold(player.getGold() + dungeon.drop() + player.getLuck());
+                    dungeon.killCurrentEnemy();
+                    System.out.println("You won! Having defeated your opponent you leave the dungeon in order to regain your senses.");
+                    System.out.println("You now have " + player.getGold() + " gold.");
+                    System.out.println("You now have " + player.getHealth() + " health points.");
+                    dungeon.setKillCount(dungeon.getKillCount() + 1);
+                    if (dungeon.getKillCount() >= 20) {
+                        this.endGame();
+                    }
+                    else {
+                        this.mainChoices();
+                    }
                 }
             }
         }
