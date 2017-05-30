@@ -46,7 +46,7 @@ public class Game {
         System.out.println("\"The old King's abandoned dungeon, just outside the village. Please help him!");
         System.out.println("You pat the man's shoulder and say \"Worry not friend, I will return your son to you.\"");
         System.out.println("Before the man can say anything, you gulp down the last of your drink and head outside, determined to rescue the poor child.");
-        
+
     }
 
     public void mainChoices() {
@@ -60,6 +60,9 @@ public class Game {
             System.out.println("Welcome to the general store! What can I get for you today?");
             System.out.println("(1) - Buy \n(2) - Leave");
             this.storeChoices();
+        }
+        else if (tempM.equals("quit")) {
+            return;
         }
         else {
             tony();
@@ -124,8 +127,8 @@ public class Game {
     public void tony() {
         System.out.println("Please enter a valid input.");
     }
-    
-     public void dead() {
+
+    public void dead() {
         System.out.println("You died! Maybe next time you shouldn't do that...");
     }
 }
