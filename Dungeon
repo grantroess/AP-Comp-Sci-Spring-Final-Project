@@ -61,7 +61,10 @@ public class Dungeon {
         return killCount;
     }
     
-    public int drop() {
+    public int drop1() {
         return badGuys.get(0).dropGold();
+    }
+    public int drop2() {
+        return badGuys.get(0).dropExp();
     }
 }
