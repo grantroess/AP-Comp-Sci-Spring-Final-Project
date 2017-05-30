@@ -59,7 +59,7 @@ public class Game {
         }
         else if (tempM.equals("2")) {
             System.out.println("Welcome to the general store! What can I get for you today?");
-            System.out.println("(1) - Buy \n(2) - Leave");
+            System.out.println("(1) - Buy \n(2) - Heal \n(3) - Leave");
             this.storeChoices();
         }
         else if (tempM.equals("quit")) {
@@ -119,6 +119,15 @@ public class Game {
             this.mainChoices();
         }
         else if (tempS.equals("2")) {
+            if(player.getGold() >= 10) {
+                store.heal(player);
+            } 
+            else {
+                System.out.println("Without enough money to heal, you run out of the store.");
+            }
+            this.mainChoices();
+        }
+        else if (tempS.equals("3")) {
             System.out.println("Leaving the store.");
             this.mainChoices();
         }
