@@ -72,7 +72,7 @@ public class Game {
         if(tempD.equals("1")) {
             player.attackSequence(dungeon.getEnemy());
             if(dungeon.getEnemy().getHealth() <= 0) {
-                dungeon.drop();
+                player.setGold(player.getGold() + dungeon.drop() + player.getLuck());
                 dungeon.killCurrentEnemy();
                 System.out.println("You won! Having defeated your opponent you leave the dungeon in order to regain your senses.");
                 System.out.println("You now have " + player.getGold() + " gold.");
