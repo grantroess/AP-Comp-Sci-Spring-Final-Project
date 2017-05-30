@@ -54,6 +54,7 @@ public class Game {
         String tempM = reader.next();
         if (tempM.equals("1")) {
             System.out.println("You are in the dungeon, would you like to fight or leave? \n(1) - Fight \n(2) - Leave");
+            System.out.println("You have " + player.getHealth() + " health points.");
             this.dungeonChoices();
         }
         else if (tempM.equals("2")) {
