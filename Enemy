@@ -2,13 +2,20 @@
 
 public abstract class Enemy extends Character
 {
-    private int dropChance;
+    private int dropChanceGold, dropChanceExp;
     
-    public void setDropChance(int c){
-        dropChance = c;
+    public void setDropChanceGold(int g){
+        dropChanceGold = g;
+    }
+    public void setDropChanceExp(int e){
+        dropChanceExp = e;
     }
     public int dropGold(){
-        double temp = Math.random() * dropChance;
+        double temp = Math.random() * dropChanceGold;        
         return (int) temp;
+    }
+    public int dropExp(){
+        double temp2 = Math.random() * dropChanceExp;        
+        return (int) temp2;
     }
 }
