@@ -2,6 +2,8 @@ import java.util.*;
 public class Store {
     ArrayList<Item> inventory = new ArrayList<Item>();
     public Store() {
+        Item blank = new Item("Buy Nothing",0,0);
+        inventory.add(blank);
         Item rustySword = new Item("Rusty Sword", 25, 10);
         inventory.add(rustySword);
         Item longSword = new Item("Long Sword", 50, 20);
@@ -16,10 +18,16 @@ public class Store {
         }
     }
 
-    public void buy(Item i, Player p) {
-        p.setGold(p.getGold() - i.getPrice());
-        inventory.remove(i);
-        p.setAttackDmg(p.getAttackDmg() + i.getDmg());
+    public void buy(int i, Player p) {
+        if(p.getGold() < inventory.get(i-1).getPrice()) {
+            System.out.println("You realize that you don't have enough gold to make the purchase and quicky run out of the store!");
+            return;
+        }
+        p.setGold(p.getGold() - inventory.get(i-1).getPrice());
+        p.setAttackDmg(p.getAttackDmg() + inventory.get(i-1).getDmg());
+        if(i-1 > 0) {
+            inventory.remove(i-1);
+        }
     }
 
     public void heal(Player p) {
