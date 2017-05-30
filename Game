@@ -46,6 +46,7 @@ public class Game {
         System.out.println("\"The old King's abandoned dungeon, just outside the village. Please help him!");
         System.out.println("You pat the man's shoulder and say \"Worry not friend, I will return your son to you.\"");
         System.out.println("Before the man can say anything, you gulp down the last of your drink and head outside, determined to rescue the poor child.");
+        
     }
 
     public void mainChoices() {
@@ -96,7 +97,10 @@ public class Game {
         String tempS = reader.next();
         if (tempS.equals("1")) {
             System.out.println("What catches your eye?");
+            System.out.println("You have " + player.getGold() + " gold.");
             store.displayInventory();
+            store.buy(reader.nextInt(),player);
+            this.mainChoices();
         }
         else if (tempS.equals("2")) {
             System.out.println("Leaving the store.");
@@ -114,13 +118,12 @@ public class Game {
         System.out.println("Stats: ");
         player.getAttributes();
     }
-    
-    public void dead() {
-        System.out.println("You died! Maybe next time you shouldn't do that...");
-    }
 
     public void tony() {
         System.out.println("Please enter a valid input.");
     }
+    
+     public void dead() {
+        System.out.println("You died! Maybe next time you shouldn't do that...");
+    }
 }
-
