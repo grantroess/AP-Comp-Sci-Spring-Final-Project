@@ -17,7 +17,8 @@ public class Bandit extends Enemy
         list.add(b);
         list.add(n);
         this.taunt();
-        setDropChance(8);
+        setDropChanceGold(8);
+        setDropChanceExp(10);
     }
     public Bandit (double h, double d) {
         list.add(z);
@@ -29,7 +30,8 @@ public class Bandit extends Enemy
         this.setHealth(h);
         this.setAttackDmg(d);
         this.taunt();
-        setDropChance(8);
+        setDropChanceGold(8);
+        setDropChanceExp(10);
     }
 
     public String taunt(){
@@ -37,3 +39,4 @@ public class Bandit extends Enemy
         return list.get((int)i);     
     }
 }
+
