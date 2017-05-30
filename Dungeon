@@ -29,7 +29,7 @@ public class Dungeon {
         return killCount;
     }
     
-    public void drop() {
-        badGuys.get(0).dropGold();
+    public int drop() {
+        return badGuys.get(0).dropGold();
     }
 }
