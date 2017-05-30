@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Game {
@@ -50,7 +51,8 @@ public class Game {
     }
 
     public void mainChoices() {
-        System.out.println("You are in the courtyard, where would you like to go? \n(1) - Dungeon \n(2) - Store");
+        System.out.println("You are in the courtyard, where would you like to go? \n(1) - Dungeon \n(2) - Store \n(3) Level Up " +
+            "\n(Quit) ");
         String tempM = reader.next();
         if (tempM.equals("1")) {
             System.out.println("You are in the dungeon, would you like to fight or leave? \n(1) - Fight \n(2) - Leave");
@@ -136,6 +138,39 @@ public class Game {
             this.storeChoices();
         }
     }
+    
+    public void LevelUpChoices(){
+        if (player.getAttributeCount() > 0){
+            player.getAttributes();
+            System.out.println("You have " + player.getAttributeCount() + " attribute points left to distribute.");
+            while(player.getAttributeCount() > 0) {
+                String pick = reader.next();
+                if(pick.equals("1")) {
+                    player.increaseStrength();
+                } else if(pick.equals("2")) {
+                    player.increaseVitality();
+                } else if(pick.equals("3")) {
+                    player.increaseLuck();
+                } else if(pick.equals("4")) {
+                    player.increaseSpeech();
+                } else if(pick.equals("5")) {
+                    player.increaseFinesse();
+                } else if(pick.equals("6")) {
+                    player.increaseAgility();
+                } else {
+                    tony();
+                }
+                player.getAttributes();
+                System.out.println("You have " + player.getAttributeCount() + " attribute points left to distribute.");
+            }
+            this.mainChoices();
+        }
+        else {
+            System.out.println("You don't have any attribute points to distribute.");
+            this.mainChoices();
+        }
+    }
+
 
     public void endGame() {
         System.out.println("You have completed your quest!");
