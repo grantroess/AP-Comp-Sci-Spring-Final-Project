@@ -3,14 +3,46 @@ public class Dungeon {
     private int killCount;
     ArrayList<Enemy> badGuys = new ArrayList<Enemy>();
     public Dungeon() {
-        Bandit a = new Bandit(50, 8);
+        Bandit a = new Bandit(10, 2);
         badGuys.add(a);
-        Bandit b = new Bandit(75, 10);
+        Bandit b = new Bandit(20, 5);
         badGuys.add(b);
-        Bandit c = new Bandit(90, 14);
+        Bandit c = new Bandit(30, 8);
         badGuys.add(c);
-        Bandit d = new Bandit(100, 17);
+        Bandit d = new Bandit(40, 11);
         badGuys.add(d);
+        Bandit e = new Bandit(50, 14);
+        badGuys.add(e);
+        Elf f = new Elf(60, 17);
+        badGuys.add(f);
+        Elf g = new Elf(70, 20);
+        badGuys.add(g);
+        Elf h = new Elf(80, 23);
+        badGuys.add(h);
+        Elf i = new Elf(90, 26);
+        badGuys.add(i);
+        Elf j = new Elf(100, 29);
+        badGuys.add(j);
+        Goblin k = new Goblin(110, 32);
+        badGuys.add(k);
+        Goblin l = new Goblin(120, 35);
+        badGuys.add(l);
+        Goblin m = new Goblin(130, 38);
+        badGuys.add(m);
+        Goblin n = new Goblin(140, 41);
+        badGuys.add(n);
+        Goblin o = new Goblin(150, 44);
+        badGuys.add(o);
+        Orc p = new Orc(160, 47);
+        badGuys.add(p);
+        Orc q = new Orc(170, 50);
+        badGuys.add(q);
+        Orc r = new Orc(80, 53);
+        badGuys.add(r);
+        Orc s = new Orc(90, 56);
+        badGuys.add(s);
+        Orc t = new Orc(100, 59);
+        badGuys.add(t);
     }
 
     public Enemy getEnemy() {
