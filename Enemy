@@ -7,7 +7,8 @@ public abstract class Enemy extends Character
     public void setDropChance(int c){
         dropChance = c;
     }
-    public int getDropChance(){
-        return dropChance;
+    public int dropGold(){
+        double temp = Math.random() * dropChance;
+        return (int) temp;
     }
 }
