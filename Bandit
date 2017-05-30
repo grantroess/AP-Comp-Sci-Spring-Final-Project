@@ -6,7 +6,7 @@ public class Bandit extends Enemy
     String z = "You have a weak jawline!";
     String x = "Your mother's weight is above average!";
     String c = "Show me your moves!";
-    String v = "My father was a test tube and my mother was a rubber band. You do the Math!!";
+    String v = "My father was a test tube and my mother was a rubber band! You do the Math!!";
     String b = "Your foot is dumb.";
     String n = "Bold move for someone not riding a unicycle.";
     public Bandit(){        
@@ -17,6 +17,7 @@ public class Bandit extends Enemy
         list.add(b);
         list.add(n);
         this.taunt();
+        setDropChance(8);
     }
     public Bandit (double h, double d) {
         list.add(z);
@@ -28,6 +29,7 @@ public class Bandit extends Enemy
         this.setHealth(h);
         this.setAttackDmg(d);
         this.taunt();
+        setDropChance(8);
     }
 
     public String taunt(){
@@ -35,5 +37,3 @@ public class Bandit extends Enemy
         return list.get((int)i);     
     }
 }
-
-
