@@ -6,7 +6,8 @@ public class Elf extends Enemy
     public Elf (double h, double d) {
         this.setHealth(h);
         this.setAttackDmg(d);
-        setDropChance(21);
+        setDropChanceGold(21);
+        setDropChanceExp(30);
     }
     public void invulnerable(){
         tempHealth = this.getHealth();
