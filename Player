@@ -4,7 +4,7 @@ public class Player extends Character
     private int attributeCount;
     private double attackDmg, tempHealth, tempAttackDmg;
     public Player(){
-        attackDmg = 10;
+        attackDmg = 25;
         this.setHealth(100);
         gold = 0;
         exp = 0;
@@ -34,7 +34,7 @@ public class Player extends Character
     }
 
     public void attackSequence(Enemy y) {
-        while(this.getHealth() > 0 || y.getHealth() > 0) {
+        while(this.getHealth() > 0 && y.getHealth() > 0) {
             double temp = Math.random()*30;
             if (temp <= agility) {
                 this.invulnerable();
