@@ -10,7 +10,7 @@ public class Game {
 
     public void intro() {    
         System.out.println("You wake up dazed and confused inside of a dark and musty cave");
-        System.out.print("what is your name?   ");
+        System.out.print("What is your name?   ");
         player.setName(reader.next());
         System.out.println(player.getName() + "? That's a nice name.");
         System.out.println("You will now choose your attributes, you have 10 skill points available.");
@@ -52,7 +52,7 @@ public class Game {
 
     public void mainChoices() {
         System.out.println("You are in the courtyard, where would you like to go? \n(1) - Dungeon \n(2) - Store \n(3) Level Up " +
-            "\n(Quit) ");
+            "\n(quit) ");
         String tempM = reader.next();
         if (tempM.equals("1")) {
             System.out.println("You are in the dungeon, would you like to fight or leave? \n(1) - Fight \n(2) - Leave");
@@ -63,6 +63,9 @@ public class Game {
             System.out.println("Welcome to the general store! What can I get for you today?");
             System.out.println("(1) - Buy \n(2) - Heal \n(3) - Leave");
             this.storeChoices();
+        }
+        else if (tempM.equals("3")) {
+            this.levelUpChoices();
         }
         else if (tempM.equals("quit")) {
             return;
@@ -139,7 +142,7 @@ public class Game {
         }
     }
     
-    public void LevelUpChoices(){
+    public void levelUpChoices(){
         if (player.getAttributeCount() > 0){
             player.getAttributes();
             System.out.println("You have " + player.getAttributeCount() + " attribute points left to distribute.");
